@@ -7,35 +7,35 @@
         <item
             android:id="@+id/nav_vertretungsplan"
             android:icon="@drawable/ic_vertretungsplan"
-            android:title="Vertretungsplan" />
+            android:title="@string/vertretungsplan" />
 
         <item
             android:id="@+id/nav_stundenplan"
             android:icon="@drawable/ic_stundenplan"
-            android:title="Stundenplan" />
+            android:title="@string/stundenplan" />
 
         <item
             android:id="@+id/nav_ankuendigungen"
             android:icon="@drawable/ic_ankuendigungen"
-            android:title="Ankündigungen" />
+            android:title="@string/ank_ndigungen" />
 
         <item
             android:id="@+id/nav_ags"
             android:icon="@drawable/ic_ags"
-            android:title="AGs" />
+            android:title="@string/ags" />
     </group>
 
-    <item android:title="Konto">
+    <item android:title="@string/konto">
         <menu>
             <item
                 android:id="@+id/nav_einstellungen"
                 android:icon="@drawable/ic_einstellungen"
-                android:title="Einstellungen" />
+                android:title="@string/einstellungen" />
 
             <item
                 android:id="@+id/logout"
                 android:icon="@drawable/ic_logout"
-                android:title="Logout"/>
+                android:title="@string/logout"/>
         </menu>
     </item>
 </menu>

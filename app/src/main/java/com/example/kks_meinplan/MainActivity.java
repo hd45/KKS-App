@@ -9,8 +9,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.AGsFragment;
 import com.AnkündigungenFragment;
@@ -77,6 +79,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new EinstellungenFragment()).commit();
                 break;
+            case R.id.nav_logout:
+                AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
+                alertDialogBuilder2.setTitle("Möchtest du dich abmelden?");
+                alertDialogBuilder2
+                        .setCancelable(false)
+                        .setPositiveButton("Abmelden",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        moveTaskToBack(true);
+                                        android.os.Process.killProcess(android.os.Process.myPid());
+                                        System.exit(1);
+                                    }//todo nachm Klicken auf "Abmelden" soll man auf die Anmelde-
+                                    //activity landen. Lg fragen, ob es so geht oder ob man
+                                    //button ids braucht.
+                                    // https://stackoverflow.com/questions/5070618/how-to-start-an
+                                    // -activity-from-a-dialog-in-android
+                                })
+
+                        .setNegativeButton("Angemeldet bleiben",
+                                new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                dialog.cancel();
+                            }
+                        });
+
+                AlertDialog alertDialog = alertDialogBuilder2.create();
+                alertDialog.show();
+                break;
         }
 
         drawer.closeDrawer(GravityCompat.START);
@@ -94,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
             alertDialogBuilder.setTitle("Möchtest du die App verlassen?");
             alertDialogBuilder
+                    .setMessage("App verlassen")
                     .setCancelable(false)
                     .setPositiveButton("Ja",
                             new DialogInterface.OnClickListener() {

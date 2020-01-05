@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -21,6 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    Intent i;
 
 
     @Override
@@ -85,15 +87,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setCancelable(false)
                         .setPositiveButton("Abmelden",
                                 new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-                                        moveTaskToBack(true);
-                                        android.os.Process.killProcess(android.os.Process.myPid());
-                                        System.exit(1);
-                                    }//todo nachm Klicken auf "Abmelden" soll man auf die Anmelde-
-                                    //activity landen. Lg fragen, ob es so geht oder ob man
-                                    //button ids braucht.
-                                    // https://stackoverflow.com/questions/5070618/how-to-start-an
-                                    // -activity-from-a-dialog-in-android
+                                    public void onClick(DialogInterface dialog, int which) {
+                                      //  moveTaskToBack(true); //todo: fragen wozu das dient
+                                        i = new Intent(MainActivity.this,anmelden_activity.class);
+                                        startActivity(i);
+                                    }
                                 })
 
                         .setNegativeButton("Angemeldet bleiben",
@@ -146,10 +144,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             alertDialog.show();
         }
 
-
-        //todo 1 logout alert dialog
-        //todo 2 switches Code ist richtig
-        // aber irgendwas ist falsch vllt mit OnCreate lifecycle
+        //todo 2 switches Code ist richtig, aber irgendwas ist falsch vllt mit OnCreate lifecycle
 
     }
 }

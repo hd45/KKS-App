@@ -12,6 +12,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Button;
 
 import com.AGsFragment;
 import com.AnkündigungenFragment;
@@ -94,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                     }
                                 })
 
-                        .setNegativeButton("Angemeldet bleiben",
+                        .setNegativeButton("Zurück",
                                 new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
 
@@ -114,17 +115,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
+        Button btn_ja,btn_nein;
+        btn_ja = findViewById(R.id.btn_ja);
+        btn_nein = findViewById(R.id.btn_nein);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
 
         } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setTitle("App verlassen");
+            alertDialogBuilder.setView(R.layout.dialog);
+            alertDialogBuilder.setTitle((CharSequence) findViewById(R.id.title_appverlassen));
             alertDialogBuilder
-                    .setMessage("Möchtest du die App verlassen?")
+                    .setMessage((CharSequence) findViewById(R.id.txt_appverlassen))
                     .setCancelable(false)
-                    .setPositiveButton("Ja",
+                    .setPositiveButton((CharSequence) findViewById(R.id.btn_ja),
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     moveTaskToBack(true);
@@ -133,7 +138,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             })
 
-                    .setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+                    .setNegativeButton((CharSequence) findViewById(R.id.btn_nein),
+                            new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
 
                             dialog.cancel();
@@ -143,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
         }
-
+        //todo 1 hier brauche ich OnClickListener für die Buttons Ja, Nein.
         //todo 2 switches Code ist richtig, aber irgendwas ist falsch vllt mit OnCreate lifecycle
 
     }

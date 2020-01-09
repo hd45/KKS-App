@@ -22,7 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     Intent i;
-    //todo: neue Activity für die Einstellungen + Switches da rein klatschen, vllt funktioniert das so
+
 
 
     @Override
@@ -144,9 +144,8 @@ int id = menuItem.getItemId();
         }
 
 
-        //todo 1 logout alert dialog
-        //todo 2 switches Code ist richtig
-        // aber irgendwas ist falsch vllt mit OnCreate lifecycle
+        //todo 1 alert dialog layout
+
 
     }
 }

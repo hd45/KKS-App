@@ -28,8 +28,7 @@
     </group>
 
     <group
-        android:id="@+id/group2"
-        android:checkableBehavior="single">
+        android:id="@+id/group2">
         <item
             android:id="@+id/nav_einstellungen"
             android:icon="@drawable/ic_einstellungen"
@@ -37,9 +36,9 @@
 
         <item
             android:id="@+id/nav_logout"
+            android:checkable="false"
             android:icon="@drawable/ic_logout"
-            android:title="@string/logout"
-            android:checkable="false"/>
+            android:title="@string/logout" />
     </group>
 
 </menu>

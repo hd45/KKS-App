@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class anmelden_activity extends AppCompatActivity {
+public class anmeldenActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_anmelden);
+
+
 
         Button button = findViewById(R.id.anmelden);
         button.setOnClickListener(new View.OnClickListener() {

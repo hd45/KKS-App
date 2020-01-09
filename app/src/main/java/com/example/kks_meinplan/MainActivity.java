@@ -12,11 +12,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 
 import com.AGsFragment;
 import com.AnkündigungenFragment;
-import com.EinstellungenFragment;
 import com.StundenplanFragment;
 import com.VertretungsplanFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -24,6 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
     Intent i;
+    //todo: neue Activity für die Einstellungen + Switches da rein klatschen, vllt funktioniert das so
 
 
     @Override
@@ -58,8 +57,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-
-        switch (menuItem.getItemId()) {
+int id = menuItem.getItemId();
+        if (id == R.id.nav_einstellungen){
+            startActivity(new Intent(MainActivity.this, Settings.class));
+        }
+    switch (menuItem.getItemId()) {
             case R.id.nav_vertretungsplan:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new VertretungsplanFragment()).commit();
@@ -76,10 +78,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new AGsFragment()).commit();
                 break;
-            case R.id.nav_einstellungen:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new EinstellungenFragment()).commit();
-                break;
             case R.id.nav_logout:
                 AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
                 alertDialogBuilder2.setTitle("Logout");
@@ -89,19 +87,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setPositiveButton("Abmelden",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                      //  moveTaskToBack(true); //todo: fragen wozu das dient
-                                        i = new Intent(MainActivity.this,anmelden_activity.class);
+                                        //  moveTaskToBack(true); //todo: fragen wozu das dient
+                                        i = new Intent(MainActivity.this,anmeldenActivity.class);
                                         startActivity(i);
                                     }
                                 })
 
                         .setNegativeButton("Zurück",
                                 new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
+                                    public void onClick(DialogInterface dialog, int id) {
 
-                                dialog.cancel();
-                            }
-                        });
+                                        dialog.cancel();
+                                    }
+                                });
 
                 AlertDialog alertDialog = alertDialogBuilder2.create();
                 alertDialog.show();
@@ -115,21 +113,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        Button btn_ja,btn_nein;
-        btn_ja = findViewById(R.id.btn_ja);
-        btn_nein = findViewById(R.id.btn_nein);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
 
         } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-            alertDialogBuilder.setView(R.layout.dialog);
-            alertDialogBuilder.setTitle((CharSequence) findViewById(R.id.title_appverlassen));
+            alertDialogBuilder.setTitle("App verlassen");
             alertDialogBuilder
-                    .setMessage((CharSequence) findViewById(R.id.txt_appverlassen))
+                    .setMessage("Möchtest du die App verlassen?")
                     .setCancelable(false)
-                    .setPositiveButton((CharSequence) findViewById(R.id.btn_ja),
+                    .setPositiveButton("Ja",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     moveTaskToBack(true);
@@ -138,8 +132,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 }
                             })
 
-                    .setNegativeButton((CharSequence) findViewById(R.id.btn_nein),
-                            new DialogInterface.OnClickListener() {
+                    .setNegativeButton("Nein", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
 
                             dialog.cancel();
@@ -149,8 +142,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
         }
-        //todo 1 hier brauche ich OnClickListener für die Buttons Ja, Nein.
-        //todo 2 switches Code ist richtig, aber irgendwas ist falsch vllt mit OnCreate lifecycle
+
+
+        //todo 1 logout alert dialog
+        //todo 2 switches Code ist richtig
+        // aber irgendwas ist falsch vllt mit OnCreate lifecycle
 
     }
 }

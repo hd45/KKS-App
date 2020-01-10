@@ -22,18 +22,18 @@
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch1"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="59dp"
         android:allowUndo="false"
         android:text="@string/auto_login"
         android:textSize="20sp"
-        android:padding="9dp"/>
+        android:padding="16dp"/>
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch2"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="59dp"
         android:text="@string/benachrichtigungen"
         android:textSize="20sp"
-        android:padding="9dp"/>
+        android:padding="16dp"/>
 
 </LinearLayout>

@@ -31,7 +31,9 @@ public class anmeldenActivity extends AppCompatActivity {
     }
 
     public void onBackPressed(){
-        android.os.Process.killProcess(android.os.Process.myPid());
-        System.exit(1);
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
 }

@@ -17,11 +17,13 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        findViewById(R.id.toolbar);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Einstellungen");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Zurückknopf
+        //todo onRestart für MainActivity hat nicht geklappt, Lösung finden!
 
         switch1 = findViewById(R.id.switch1);
         switch2 = findViewById(R.id.switch2);
@@ -31,6 +33,7 @@ public class Settings extends AppCompatActivity {
         switch1.setChecked(preferences.getBoolean("value", true));
 
 
+        //Die Switches
         switch1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

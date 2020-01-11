@@ -20,6 +20,7 @@ public class anmeldenActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openMainactivity();
+                finish();
             }
         });
     }
@@ -30,6 +31,7 @@ public class anmeldenActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //App verlassen nach dem Klicken Zurück
     public void onBackPressed(){
         Intent a = new Intent(Intent.ACTION_MAIN);
         a.addCategory(Intent.CATEGORY_HOME);

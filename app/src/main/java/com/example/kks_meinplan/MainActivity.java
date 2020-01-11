@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Intent i;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,11 +56,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-int id = menuItem.getItemId();
-        if (id == R.id.nav_einstellungen){
+        int id = menuItem.getItemId();
+        if (id == R.id.nav_einstellungen) {
             startActivity(new Intent(MainActivity.this, Settings.class));
         }
-    switch (menuItem.getItemId()) {
+        switch (menuItem.getItemId()) {
             case R.id.nav_vertretungsplan:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new VertretungsplanFragment()).commit();
@@ -88,7 +87,7 @@ int id = menuItem.getItemId();
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         //  moveTaskToBack(true); //todo: fragen wozu das dient
-                                        i = new Intent(MainActivity.this,anmeldenActivity.class);
+                                        i = new Intent(MainActivity.this, anmeldenActivity.class);
                                         startActivity(i);
                                     }
                                 })
@@ -110,6 +109,7 @@ int id = menuItem.getItemId();
 
         return true;
     }
+
 
     @Override
     public void onBackPressed() {

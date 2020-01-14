@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = menuItem.getItemId();
         if (id == R.id.nav_einstellungen) {
             startActivity(new Intent(MainActivity.this, Settings.class));
+            finish();
         }
         switch (menuItem.getItemId()) {
             case R.id.nav_vertretungsplan:

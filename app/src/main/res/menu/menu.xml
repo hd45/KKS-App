@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/dark_mode"
+    <item android:id="@+id/refresh"
         android:title="@string/refresh"
         android:icon="@mipmap/refresh"
         app:showAsAction="always"/>

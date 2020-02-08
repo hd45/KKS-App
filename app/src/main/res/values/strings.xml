@@ -16,6 +16,7 @@
     <string name="logout">Logout</string>
     <string name="Anmelden">Anmelden</string>
     <string name="Registrieren">Registrieren</string>
+    <string name="refresh">refresh</string>
 
 
 </resources>

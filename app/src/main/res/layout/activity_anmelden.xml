@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".anmeldenActivity"
     android:background="@color/colorPrimaryDark"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
 
    <ImageView

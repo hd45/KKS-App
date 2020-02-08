@@ -11,6 +11,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.AGsFragment;
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .setPositiveButton("Abmelden",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
-                                        //  moveTaskToBack(true); //todo: fragen wozu das dient
+                                        //  moveTaskToBack(true);
                                         i = new Intent(MainActivity.this, anmeldenActivity.class);
                                         startActivity(i);
                                     }
@@ -146,7 +148,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         //todo 1 alert dialog layout
+    }
 
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
     }
 }

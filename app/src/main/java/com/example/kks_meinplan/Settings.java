@@ -1,5 +1,6 @@
 package com.example.kks_meinplan;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
@@ -9,7 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-public class Settings extends AppCompatActivity {
+public class Settings extends AppCompatActivity{
     SwitchCompat switch1;
     SwitchCompat switch2;
 
@@ -18,12 +19,10 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        findViewById(R.id.toolbar);
-
         Toolbar toolbar = findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Einstellungen");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Zurückknopf
         //todo onRestart für MainActivity hat nicht geklappt, Lösung finden!
 
         switch1 = findViewById(R.id.switch1);
@@ -38,15 +37,15 @@ public class Settings extends AppCompatActivity {
         switch1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (switch1.isChecked()){
+                if (switch1.isChecked()) {
 
-                    SharedPreferences.Editor editor  = getSharedPreferences("save",
+                    SharedPreferences.Editor editor = getSharedPreferences("save",
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value", true);
                     editor.apply();
                     switch1.setChecked(true);
-                }else {
-                    SharedPreferences.Editor editor  = getSharedPreferences("save",
+                } else {
+                    SharedPreferences.Editor editor = getSharedPreferences("save",
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value", false);
                     editor.apply();
@@ -63,15 +62,15 @@ public class Settings extends AppCompatActivity {
         switch2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (switch2.isChecked()){
+                if (switch2.isChecked()) {
 
-                    SharedPreferences.Editor editor  = getSharedPreferences("save2",
+                    SharedPreferences.Editor editor = getSharedPreferences("save2",
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value2", true);
                     editor.apply();
                     switch2.setChecked(true);
-                }else {
-                    SharedPreferences.Editor editor  = getSharedPreferences("save2",
+                } else {
+                    SharedPreferences.Editor editor = getSharedPreferences("save2",
                             MODE_PRIVATE).edit();
                     editor.putBoolean("value2", false);
                     editor.apply();
@@ -82,8 +81,9 @@ public class Settings extends AppCompatActivity {
 
         });
     }
+
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

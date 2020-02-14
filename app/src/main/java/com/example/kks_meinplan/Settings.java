@@ -20,7 +20,6 @@ public class Settings extends AppCompatActivity{
         setContentView(R.layout.activity_settings);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Einstellungen");
         //todo onRestart für MainActivity hat nicht geklappt, Lösung finden!

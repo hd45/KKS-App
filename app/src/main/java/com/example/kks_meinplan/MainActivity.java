@@ -1,17 +1,14 @@
 package com.example.kks_meinplan;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.NavigationUI;
+import androidx.fragment.app.Fragment;
+
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,7 +16,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.AGsFragment;
 import com.AnkündigungenFragment;
@@ -40,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigatonView = findViewById(R.id.navigation_view);
+        NavigationView navigatonView = findViewById(R.id.nav_view);
         setSupportActionBar(toolbar);
 
         navigatonView.setNavigationItemSelectedListener(this); //select the activated item
@@ -49,26 +45,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
+        getSupportActionBar().setTitle("Vertretungsplan");
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new VertretungsplanFragment()).commit();
             navigatonView.setCheckedItem(R.id.nav_vertretungsplan);
         }
 
         navigatonView.setItemIconTintList(null); //Für die Icon Farben im NavigationView
-        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
-
-
-
-
-        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
-            @Override
-            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-            getSupportActionBar().setTitle(destination.getLabel());
-            }
-        });
-
     }
 
 
@@ -82,20 +67,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         switch (menuItem.getItemId()) {
             case R.id.nav_vertretungsplan:
-                getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new VertretungsplanFragment()).commit();
+                getSupportActionBar().setTitle("Vertretungsplan");
                 break;
             case R.id.nav_stundenplan:
-                getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new StundenplanFragment()).commit();
+                getSupportActionBar().setTitle("Stundenplan");
                 break;
             case R.id.nav_ankuendigungen:
-                getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new AnkündigungenFragment()).commit();
+                getSupportActionBar().setTitle("Ankündigungen");
                 break;
             case R.id.nav_ags:
-                getSupportFragmentManager().beginTransaction().replace(R.id.navHostFragment,
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new AGsFragment()).commit();
+                getSupportActionBar().setTitle("AGs");
                 break;
             case R.id.nav_logout:
                 AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);

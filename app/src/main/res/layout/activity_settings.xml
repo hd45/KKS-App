@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/activity_background">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -25,7 +26,7 @@
         android:allowUndo="false"
         android:text="@string/auto_login"
         android:textSize="20sp"
-        android:padding="16dp"/>
+        android:padding="16dp" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/switch2"

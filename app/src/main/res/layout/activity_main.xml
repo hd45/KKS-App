@@ -8,7 +8,8 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".MainActivity"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    android:background="@color/activity_background">
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -41,7 +42,8 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/navigation_header"
         app:menu="@menu/drawer_menu"
-        android:background="@color/navigationViewColor"/>
+        android:background="@color/navigationViewColor"
+        app:itemTextColor="@color/itemTextColor" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

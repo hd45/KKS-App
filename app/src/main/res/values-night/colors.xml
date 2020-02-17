@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#050706</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#0F0C0C</color>
+    <color name="navigationViewColor">#212121</color>
+    <color name="login_buttons">#8FBDBBBB</color>
+    <color name="activity_background">#212121</color>
+    <color name="itemTextColor">#FFFFFF</color>
+    <color name="drawer_icons">#C1FFFFFF</color>
+</resources>

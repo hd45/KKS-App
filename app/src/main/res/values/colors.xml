@@ -8,4 +8,7 @@
     <color name="activity_background">#FFFFFF</color>
     <color name="itemTextColor">#000000</color>
     <color name="drawer_icons">#FF000000</color>
+    <color name="switch_checked">#000000</color>
+    <color name="switch_not_checked">#4BFFFFFF</color>
+    <color name="text">#000000</color>
 </resources>

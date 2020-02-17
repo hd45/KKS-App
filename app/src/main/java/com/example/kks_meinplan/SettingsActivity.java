@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 
-public class Settings extends AppCompatActivity{
+public class SettingsActivity extends AppCompatActivity{
     SwitchCompat switch1;
     SwitchCompat switch2;
 

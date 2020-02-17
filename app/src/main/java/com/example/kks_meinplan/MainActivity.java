@@ -35,10 +35,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigatonView = findViewById(R.id.nav_view);
-
         setSupportActionBar(toolbar);
 
-        navigatonView.setNavigationItemSelectedListener(this);
+        navigatonView.setNavigationItemSelectedListener(this); //select the activated item
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -51,6 +50,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             navigatonView.setCheckedItem(R.id.nav_vertretungsplan);
         }
 
+        navigatonView.setItemIconTintList(null); //Für die Icon Farben im NavigationView
+
 
     }
 
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         int id = menuItem.getItemId();
         if (id == R.id.nav_einstellungen) {
-            startActivity(new Intent(MainActivity.this, Settings.class));
+            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
             finish();
         }
         switch (menuItem.getItemId()) {
@@ -90,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         //  moveTaskToBack(true);
-                                        i = new Intent(MainActivity.this, anmeldenActivity.class);
+                                        i = new Intent(MainActivity.this, StartActivity.class);
                                         startActivity(i);
                                     }
                                 })

@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".anmeldenActivity">
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"> </activity>
-        <activity android:name=".Settings"
+        <activity android:name=".SettingsActivity"
             android:parentActivityName=".MainActivity"/>
     </application>
 

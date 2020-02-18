@@ -88,7 +88,7 @@ public class SettingsActivity extends AppCompatActivity{
         finish();
     }
 
-    //todo go to last opened fragment after returning settingsActivity
+    //todo go to last opened fragment after returning from settingsActivity
     /*FragmentManager manager = getSupportFragmentManager();
     int count = manager.getBackStackEntryCount();
         if(count0){

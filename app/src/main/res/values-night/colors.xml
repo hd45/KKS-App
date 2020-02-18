@@ -9,6 +9,6 @@
     <color name="itemTextColor">#FFFFFF</color>
     <color name="drawer_icons">#C1FFFFFF</color>
     <color name="switch_checked">#201D1D</color>
-    <color name="switch_not_checked">#20FFFFFF</color>
+    <color name="switch_not_checked">#00BCD4</color>
     <color name="text">#BDBBBB</color>
 </resources>

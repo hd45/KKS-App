@@ -85,5 +85,16 @@ public class SettingsActivity extends AppCompatActivity{
     public void onBackPressed() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
+
+    //todo go to last opened fragment after returning settingsActivity
+    /*FragmentManager manager = getSupportFragmentManager();
+    int count = manager.getBackStackEntryCount();
+        if(count0){
+        Fragment  mfragment = manager.getBackStackEntryAt(count-1);
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.content_frame, mFragment);
+        ft.commit();
+    }*/
 }

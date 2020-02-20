@@ -17,6 +17,8 @@
     <string name="Anmelden">Anmelden</string>
     <string name="Registrieren">Registrieren</string>
     <string name="refresh">refresh</string>
+    <string name="name_edittext">Name</string>
+    <string name="passwort_edittext">Passwort</string>
 
 
 </resources>

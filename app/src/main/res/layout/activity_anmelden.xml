@@ -13,39 +13,22 @@
        android:layout_width="wrap_content"
        android:layout_height="350dp"
        android:src="@drawable/kkslogo"
-       android:layout_marginTop="19dp"
+       android:layout_marginTop="36dp"
        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/anmelden"
         android:layout_width="231dp"
         android:layout_height="50dp"
-        android:layout_marginTop="85dp"
         android:layout_gravity="center"
+        android:layout_marginTop="130dp"
         android:background="@drawable/anmelden_buttons"
-        android:text="@string/Anmelden"
-        android:textSize="16sp"
-        android:textAllCaps="false"
         android:gravity="center"
+        android:text="@string/Anmelden"
+        android:textAllCaps="false"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="90dp"
         tools:layout_editor_absoluteY="538dp" />
-
-
-    <Button
-        android:id="@+id/registrieren"
-        android:layout_width="231dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:background="@drawable/anmelden_buttons"
-        android:text="@string/Registrieren"
-        android:textSize="16sp"
-        android:textAllCaps="false"
-        android:gravity="center"
-        tools:layout_editor_absoluteX="90dp"
-        tools:layout_editor_absoluteY="605dp" />
-
-
 
 
 </LinearLayout>

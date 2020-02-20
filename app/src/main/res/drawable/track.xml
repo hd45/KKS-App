@@ -9,6 +9,7 @@
 
     <item android:state_checked="false">
         <shape android:shape="rectangle">
+            <corners android:radius="48dp"/>
             <solid android:color="@color/switch_not_checked"/>
         </shape>
     </item>

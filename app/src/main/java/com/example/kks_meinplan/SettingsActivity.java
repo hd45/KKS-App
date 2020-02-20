@@ -22,7 +22,6 @@ public class SettingsActivity extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Einstellungen");
-        //todo onRestart für MainActivity hat nicht geklappt, Lösung finden!
 
         switch1 = findViewById(R.id.switch1);
         switch2 = findViewById(R.id.switch2);

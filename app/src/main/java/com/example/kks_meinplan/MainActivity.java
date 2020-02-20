@@ -152,8 +152,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             alertDialog.show();
         }
 
-
-        //todo 1 alert dialog layout
     }
 
     @Override

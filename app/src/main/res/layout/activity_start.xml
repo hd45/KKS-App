@@ -16,12 +16,30 @@
        android:layout_marginTop="36dp"
        android:layout_gravity="center"/>
 
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:layout_marginTop="90dp"
+        android:hint="@string/name_edittext"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:background="#FFFFFF"
+        android:layout_marginTop="20dp"
+        android:hint="@string/passwort_edittext"
+        android:gravity="center"/>
+
     <Button
         android:id="@+id/anmelden"
         android:layout_width="231dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/anmelden_buttons"
         android:gravity="center"
         android:text="@string/Anmelden"

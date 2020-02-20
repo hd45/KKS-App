@@ -24,5 +24,17 @@
         android:hint="@string/passwort_edittext"
         android:gravity="center"/>
 
+    <Button
+        android:id="@+id/weiter"
+        android:layout_width="231dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/anmelden_buttons"
+        android:gravity="center"
+        android:text="Weiter"
+        android:textAllCaps="true"
+        android:textSize="16sp"/>
+
 
 </LinearLayout>

@@ -8,6 +8,7 @@
     android:layout_height="wrap_content"
     android:text="Ankündigungen"
     android:textSize="30dp"
+    android:textColor="#FFFFFF"
     android:layout_centerInParent="true"/>
 
 </RelativeLayout>

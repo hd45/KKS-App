@@ -12,4 +12,5 @@
     <color name="switch_not_checked">#B0C72626</color>
     <color name="text">#000000</color>
     <color name="switch_color">#00BCD4</color>
+    <color name="ripple_effect_color">#000000</color>
 </resources>

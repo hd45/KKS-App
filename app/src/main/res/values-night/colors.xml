@@ -12,4 +12,5 @@
     <color name="switch_not_checked">#00BCD4</color>
     <color name="text">#CFCBCB</color>
     <color name="switch_color">#673AB7</color>
+    <color name="splashscreen_item_color">#000000</color>
 </resources>

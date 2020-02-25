@@ -24,6 +24,7 @@
         android:layout_marginTop="50dp"
         android:hint="@string/name_edittext"
         android:gravity="center"
+        android:inputType="text"
         android:imeOptions="actionNext"/>
 
     <EditText
@@ -34,7 +35,8 @@
         android:layout_marginTop="20dp"
         android:hint="@string/passwort_edittext"
         android:gravity="center"
-        android:imeOptions="actionSend"/>
+        android:inputType="textPassword"
+        android:imeOptions="actionGo"/>
 
     <Button
         android:id="@+id/anmelden"

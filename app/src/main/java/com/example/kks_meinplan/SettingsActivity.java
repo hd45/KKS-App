@@ -85,15 +85,11 @@ public class SettingsActivity extends AppCompatActivity{
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
+
+        /*if (savedInstances == null){
+            getSupportFragmentManager().beginTransaction().replace()
+        }*/
     }
 
     //todo go to last opened fragment after returning from settingsActivity
-    /*FragmentManager manager = getSupportFragmentManager();
-    int count = manager.getBackStackEntryCount();
-        if(count0){
-        Fragment  mfragment = manager.getBackStackEntryAt(count-1);
-        FragmentTransaction ft = fragmentManager.beginTransaction();
-        ft.replace(R.id.content_frame, mFragment);
-        ft.commit();
-    }*/
 }

@@ -22,6 +22,7 @@ public class SettingsActivity extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Einstellungen");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         switch1 = findViewById(R.id.switch1);
         switch2 = findViewById(R.id.switch2);

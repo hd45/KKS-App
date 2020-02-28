@@ -35,5 +35,6 @@ public class StartActivity extends AppCompatActivity {
         a.addCategory(Intent.CATEGORY_HOME);
         a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(a);
+        // todo stop activity after closing the app bcs splash screen doesn't show after opening the app 2. time
     }
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "557518515682",
+    "firebase_url": "https://kksmeinplan.firebaseio.com",
+    "project_id": "kksmeinplan",
+    "storage_bucket": "kksmeinplan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:557518515682:android:62d867ca6d39934ac05dbb",
+        "android_client_info": {
+          "package_name": "com.example.kks_meinplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "557518515682-i4srsuu980jrlepgraeeaktroc1tj9nq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kks_meinplan",
+            "certificate_hash": "e61d0c8921d3a3ed63c53b297f773becb2c5b295"
+          }
+        },
+        {
+          "client_id": "557518515682-n7hogfk5kkts6elom8vcri4o30tghppq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoujZCFDkYw5ArdZmYq1nzIMGpvLc-eXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "557518515682-n7hogfk5kkts6elom8vcri4o30tghppq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

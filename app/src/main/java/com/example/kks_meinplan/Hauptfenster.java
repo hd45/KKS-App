@@ -1,6 +1,7 @@
-package com.ActivityDataSource;
+/*package com.example.kks_meinplan;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,8 +10,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.kks_meinplan.R;
-
 public class Hauptfenster extends AppCompatActivity {
 
     @Override
@@ -18,15 +17,18 @@ public class Hauptfenster extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView textView = (TextView) findViewById(R.id.textView);
-        Button lesenBtn = (Button) findViewById(R.id.lesenBtn);
+        final TextView textView = findViewById(R.id.textView);
+
+        Button lesenBtn = findViewById(R.id.lesenBtn);
         lesenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("Lesen", "Klick");
                 new ActivityDataSource(textView).execute("someParams");
             }
 
         });
+
     }
 
     @Override
@@ -44,4 +46,4 @@ public class Hauptfenster extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
 
     }
-}
+}*/

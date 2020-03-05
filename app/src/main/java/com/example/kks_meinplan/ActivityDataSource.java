@@ -1,4 +1,4 @@
-package com.ActivityDataSource;
+package com.example.kks_meinplan;
 
 
 import android.os.AsyncTask;
@@ -14,7 +14,7 @@ import java.net.URLEncoder;
 
 public class ActivityDataSource extends AsyncTask<String, Void, String> {
 
-    public static final String AUTHKEY = "test321";
+    public static final String AUTHKEY = "test321"; //todo Schlüssel muss angepasst werden
 
     public static final String POST_PARAM_KEYVALUE_SEPARATOR = "=";
     public static final String POST_PARAM_SEPARATOR = "&";
@@ -53,7 +53,7 @@ public class ActivityDataSource extends AsyncTask<String, Void, String> {
         dataBuffer.append(POST_PARAM_KEYVALUE_SEPARATOR);
         dataBuffer.append(URLEncoder.encode(DESTINATION_METHOD, "UTF-8"));
         //Adresse der PHP Schnittstelle für die Verbindung zur MySQL Datenbank
-        URL url = new URL("https://draeger-it.blog/smssca/reader.php"); //todo Link ändern
+        URL url = new URL("192.168.1.195/reader.php"); //todo Link ändern
         conn = url.openConnection();
         conn.setDoOutput(true);
         OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());

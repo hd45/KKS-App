@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
 
 
 import android.content.DialogInterface;
@@ -34,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigatonView = findViewById(R.id.nav_view);
         setSupportActionBar(toolbar);
@@ -64,12 +62,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.nav_einstellungen) {
             startActivity(new Intent(MainActivity.this, SettingsActivity.class));
         }
+        if (id == R.id.nav_vertretungsplan) {
+            startActivity(new Intent(MainActivity.this, VertretungTest.class));
+        }
         switch (menuItem.getItemId()) {
-            case R.id.nav_vertretungsplan:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new VertretungsplanFragment()).commit();
-                getSupportActionBar().setTitle("Vertretungsplan");
-                break;
             case R.id.nav_stundenplan:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new StundenplanFragment()).commit();

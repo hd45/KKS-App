@@ -79,7 +79,7 @@ public class ActivityDataSource extends AsyncTask<String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         if(!isBlank(result)) {
-            this.textView.setText(result);
+            this.textView.setText(result); //ist irgendwas in der Zelle, dann wird es angezeigt
         }
     }
 

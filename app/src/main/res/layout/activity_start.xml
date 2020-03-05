@@ -14,18 +14,9 @@
        android:layout_height="350dp"
        android:src="@drawable/kkslogo"
        android:layout_marginTop="36dp"
-       android:layout_gravity="center"/>
+       android:layout_gravity="center"
+       android:layout_marginBottom="60dp"/>
 
-    <EditText
-        android:layout_width="230dp"
-        android:layout_height="40dp"
-        android:layout_gravity="center"
-        android:background="#FFFFFF"
-        android:layout_marginTop="50dp"
-        android:hint="@string/name_edittext"
-        android:gravity="center"
-        android:inputType="text"
-        android:imeOptions="actionNext"/>
 
     <EditText
         android:layout_width="230dp"

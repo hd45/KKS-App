@@ -4,7 +4,7 @@ public class Database {
 
     public static String[] codes ={
             "asdfjklö",
-            "123456",
+            "123",
             "gfjklödnm",
             "tdfkh",
             "resdj",

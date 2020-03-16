@@ -12,7 +12,6 @@ import android.view.View;
 
 public class SettingsActivity extends AppCompatActivity{
     SwitchCompat switch1;
-    SwitchCompat switch2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +24,12 @@ public class SettingsActivity extends AppCompatActivity{
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         switch1 = findViewById(R.id.switch1);
-        switch2 = findViewById(R.id.switch2);
 
 
         SharedPreferences preferences = getSharedPreferences("save", MODE_PRIVATE);
         switch1.setChecked(preferences.getBoolean("value", true));
 
 
-        //Die Switches
         switch1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,31 +46,6 @@ public class SettingsActivity extends AppCompatActivity{
                     editor.putBoolean("value", false);
                     editor.apply();
                     switch1.setChecked(false);
-                }
-            }
-
-
-        });
-
-        SharedPreferences preferences2 = getSharedPreferences("save2", MODE_PRIVATE);
-        switch2.setChecked(preferences2.getBoolean("value2", true));
-
-        switch2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (switch2.isChecked()) {
-
-                    SharedPreferences.Editor editor = getSharedPreferences("save2",
-                            MODE_PRIVATE).edit();
-                    editor.putBoolean("value2", true);
-                    editor.apply();
-                    switch2.setChecked(true);
-                } else {
-                    SharedPreferences.Editor editor = getSharedPreferences("save2",
-                            MODE_PRIVATE).edit();
-                    editor.putBoolean("value2", false);
-                    editor.apply();
-                    switch2.setChecked(false);
                 }
             }
 

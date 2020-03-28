@@ -12,6 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     new VertretungsplanFragment()).commit();
             navigatonView.setCheckedItem(R.id.nav_vertretungsplan);
         }
-
         navigatonView.setItemIconTintList(null); //Für die Icon Farben im NavigationView
     }
 
@@ -84,33 +84,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_logout:
                 AlertDialog.Builder alertDialogBuilder2 = new AlertDialog.Builder(this);
                 alertDialogBuilder2.setTitle("Logout");
-                alertDialogBuilder2
-                        .setMessage("Möchtest du dich abmelden?")
-                        .setCancelable(false)
-                        .setPositiveButton("Abmelden",
+                alertDialogBuilder2.setMessage("Möchtest du dich abmelden?");
+                alertDialogBuilder2.setNegativeButton("Abbrechen",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+
+                                dialog.cancel();
+                            }
+                        });
+                alertDialogBuilder2.setPositiveButton("Ok",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int which) {
                                         //  moveTaskToBack(true);
                                         i = new Intent(MainActivity.this, StartActivity.class);
                                         startActivity(i);
                                     }
-                                })
-
-                        .setNegativeButton("Zurück",
-                                new DialogInterface.OnClickListener() {
-                                    public void onClick(DialogInterface dialog, int id) {
-
-                                        dialog.cancel();
-                                    }
                                 });
-
+                alertDialogBuilder2.setCancelable(false);
                 AlertDialog alertDialog = alertDialogBuilder2.create();
                 alertDialog.show();
                 break;
         }
-
         drawer.closeDrawer(GravityCompat.START);
-
         return true;
     }
 
@@ -124,29 +119,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
             alertDialogBuilder.setTitle("App verlassen");
-            alertDialogBuilder
-                    .setMessage("Möchtest du die App verlassen?")
-                    .setCancelable(false)
-                    .setPositiveButton("Ja",
+            alertDialogBuilder.setMessage("Möchtest du die App verlassen?");
+            alertDialogBuilder.setNegativeButton("Nein", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+
+                    dialog.cancel();
+                }
+            });
+            alertDialogBuilder.setPositiveButton("Ja",
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     moveTaskToBack(true);
                                     android.os.Process.killProcess(android.os.Process.myPid());
                                     System.exit(1);
                                 }
-                            })
-
-                    .setNegativeButton("Nein", new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-
-                            dialog.cancel();
-                        }
-                    });
-
+                            });
+            alertDialogBuilder.setCancelable(false);
             AlertDialog alertDialog = alertDialogBuilder.create();
             alertDialog.show();
         }
-
     }
 
     @Override
